@@ -75,16 +75,47 @@ console.log(dice);
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
 
+const whoIsBigger = function (a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+};
+console.log(whoIsBigger(20, 5));
+console.log(whoIsBigger(30, 10));
+
+whoIsBigger();
+
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+//const splitMe = function (str) {
+// return str.split("");
+//};
+//console.log(splitMe("i love coding"));      // ho dovuto commentare, poichè mi dava errore alla riga 97(non ne ho capito il motivo)
+//splitMe();
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+
+const deleteOne = function (str, shouldDeleteFirst) {
+  if (shouldDeleteFirst) {
+    return str.slice(1);
+  } else {
+    return str.slice(0, -1); // me la dà errore (non ne so il motivo)
+  }
+};
+
+console.log(deleteOne("hello", true));
+console.log(deleteOne("hello", false));
+
+deleteOne();
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
@@ -92,13 +123,31 @@ console.log(dice);
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+const onlyLetters = function (str) {
+  return str.replace(numbers);
+};
+console.log(onlyLetters("i have 4 dogs"));
+onlyLetters();
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+const isThisAnEmail = function (email) {
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
+};
+const email = "gigliosimone.97@gmail.com";
+console.log(valid(email) ? "Valid email address" : "Invalid email address");
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+const d = new Date();
+let day = d.getDay();
+
+console.log(d);
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
